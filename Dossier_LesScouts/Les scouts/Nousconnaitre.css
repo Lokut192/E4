@@ -1,0 +1,42 @@
+*{
+    padding : 0px;
+    margin : 0px;
+}
+body{
+    background : url("images/fond.jpg") fixed center no-repeat;
+    background-size: cover;
+}
+.principal{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 12.5%;
+    width : 75%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 6px 6px 10px black;
+    opacity : 0.9;
+    height : auto;
+    padding: 15px;
+}
+h1{
+    text-align : center;
+    font-size : 75px;
+}
+h2{
+    text-align : left;
+    font-size : 35px;
+    color : red;
+    margin-top : 15px;
+    margin-bottom : 15px;
+    margin-left : 2%;
+    margin-right : 2%;
+}
+p{
+    font-family : arial;
+    font-size : 24px;
+    text-align : justify;
+    margin-top : 15px;
+    margin-bottom : 15px;
+    margin-left : 2%;
+    margin-right : 2%;
+}

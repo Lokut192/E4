@@ -1,0 +1,19 @@
+body{
+    background : url("images/fond.jpg") fixed center no-repeat;
+    background-size: cover;
+}
+.principal{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 12.5%;
+    width : 75%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 6px 6px 10px black;
+    opacity : 0.9;
+    height : auto;
+}
+h1{
+    text-align : center;
+    font-size : 75px;
+}

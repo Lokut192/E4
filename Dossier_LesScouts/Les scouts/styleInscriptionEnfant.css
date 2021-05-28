@@ -1,0 +1,206 @@
+*{
+    padding : 0px;
+    margin : 0px;
+}
+body{
+    background : url("images/fond.jpg") fixed center no-repeat;
+    background-size: cover;
+    font-family: arial;
+}
+.principal{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 10%;
+    padding : 15px;
+    width : 75%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 6px 6px 10px black;
+    opacity : 0.9;
+    height : auto;
+    display : inline-block;
+}
+h1{
+    text-align : center;
+    font-size : 75px;
+}
+#boutons{
+    position : absolute;
+    margin-top : -55px;
+    margin-left : 1150px;
+}
+.btListe{
+    font-size: 18px;
+    color : blue;
+    text-decoration: underline;
+    position : relative;
+    border : none;
+    cursor : pointer;
+    border-radius : 5px;
+    border : 1px solid transparent;
+    background-color: white;
+}
+#btParents{
+    margin-left : -100px;
+}
+.btListe:focus{
+    border-bottom : none;
+}
+.btListe:active{
+    color : purple;
+}
+#infoOblige{
+    text-align: center;
+    color : red;
+}
+form{
+    margin : 10px 0px;
+    font-size : 21px;
+}
+fieldset{
+    border : none;
+    padding : 10px;
+}
+legend{
+    text-align: left;
+    font-weight: bold;
+    font-size : 40px;
+    width : 100%;
+    border-bottom : 2px solid black;
+}
+label{
+    font-weight: bold;
+    margin-right : 20px;
+}
+input{
+    border : none;
+    margin-right : 150px;
+    border-bottom : 1px solid black;
+    padding : 2px;
+    font-size: 21px;
+}
+input:focus{
+    outline : none;
+    border-bottom : 2px solid black;
+}
+select{
+    border : none;
+    border-bottom: 1px solid black;
+    font-size : 21px;
+}
+select:focus{
+    outline : none;
+    border-bottom: 2px solid black;
+}
+.saisieRue{
+    width : 500px;
+}
+.codePostal{
+    width : 75px;
+}
+.tel{
+    width : 150px;
+}
+.mail{
+    width : 350px;
+}
+#ajoutePar2{
+    margin-right : 10px;
+    margin : 20px 0px;
+    width : 15px;
+    height : 15px;
+    cursor : pointer;
+}
+#lblPar2{
+    margin-left : 10px;
+    font-size: 20px;;
+    font-weight: lighter;
+}
+#valider{
+    background-color : #0f9d58;
+    padding : 2px 5px;
+    border-radius: 5px;
+    width : 150px;
+    box-shadow : none;
+    border : none;
+    cursor : pointer;
+    border : 1px solid transparent;
+    display: inline-block;
+    float: right;
+}
+#valider:active{
+    border : 1px solid black;
+}
+.liste{
+    padding : 20px;
+    display : none;
+    box-shadow : 0px 0px 10px black;
+    position : absolute;
+    height : auto;
+    color : black;
+    background-color: white;
+    border-radius : 20px;
+    width : 75%;
+    margin-left : 12.5%;
+    margin-top : -900px;
+}
+.fermer{
+    color : red;
+    cursor : pointer;
+    position : absolute;
+    margin-left : 1475px;
+    margin-top : -50px;
+    border-radius : 10px;
+    width : 35px;
+    height : 35px;
+    background-color: white;
+    font-family : Verdana;
+    font-weight: bold;
+    border : 2px solid black;
+}
+.fermer:focus{
+    border-bottom : none;
+}
+.fermer:active{
+    border-bottom : 2px solid black;
+    font-size: 11px;
+}
+.liste h2{
+    text-align: center;
+    font-size : 40px;
+}
+.liste table{
+    padding : 0px;
+    margin-top : 25px;
+    width : 90%;
+    border-collapse : collapse;
+}
+.entete{
+    padding : 0px;
+    background-color: rgb(155,203,232);
+}
+.liste table tr:hover{
+    background-color: rgb(155,203,232);
+}
+.liste table td{
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+.suppr{
+    border : none;
+    background-color: white;
+    text-decoration: underline;
+    cursor : pointer;
+    font-size : 16px;
+    color : red;
+    margin : auto;
+}
+.suppr:active{
+    color : purple;
+}
+.suppr:focus{
+    border-bottom : none;
+}
+.liste table tr:hover .suppr{
+    background-color: rgb(155,203,232);
+}

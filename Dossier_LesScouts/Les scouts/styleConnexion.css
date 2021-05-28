@@ -1,0 +1,88 @@
+*{
+    padding : 0px;
+    margin : 0px;
+}
+body{
+    background : url("images/fond.jpg") fixed center no-repeat;
+    background-size: cover;
+}
+.principal{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 12.5%;
+    max-width : 75%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 6px 6px 10px black;
+    opacity : 1;
+    height : auto;
+    padding : 10px;
+}
+form{
+    font-family: arial;
+    margin : 20px;
+    width: 50%;
+}
+fieldset{
+    padding : 15px;
+    border : none;
+}
+legend{
+    text-align: center;
+    font-size: 40px;
+}
+.info{
+    font-size : 22px;
+    color : rgb(12, 129, 224);
+}
+span{
+    font-size: 30px;
+}
+.lblCo{
+    font-weight: bold;
+}
+.saisies{
+    padding : 2px;
+    width : 200px;
+}
+.saisies:focus{
+    outline : 2px solid #0f9d58;
+}
+.alert{
+    position : absolute;
+    margin-top: -30px;
+    margin-left : 470px;
+    border : none;
+    background-color: #be4b49;
+    padding : 10px;
+    font-weight: bold;
+    border-radius : 5px;
+    display : none;
+}
+em{
+    overflow: hidden;
+    position: absolute;
+    margin-top: -8px;
+    margin-left : -30px;
+    font-size : 25px;
+    color : #be4b49;
+    line-height: 1.34;
+}
+#envoyer{
+    width : 125px;
+    font-size : 18px;
+    height : 25px;
+    background-color: #0f9d58;
+    color : white;
+    border-radius : 5px;
+    box-shadow : none;
+    border: none;
+    transition-duration: 250ms;
+}
+#envoyer:hover{
+    cursor: pointer;
+}
+#envoyer:active{
+    border : none;
+    transform : scale(0.9);
+}

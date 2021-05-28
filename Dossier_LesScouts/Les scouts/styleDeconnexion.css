@@ -1,0 +1,32 @@
+*{
+    padding : 0px;
+    margin : 0px;
+}
+body{
+    background : url("images/fond.jpg") fixed center no-repeat;
+    background-size: cover;
+}
+.principal{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 12.5%;
+    max-width : 75%;
+    padding : 15px;
+    background-color: white;
+    text-align : center;
+    border-radius: 20px;
+    box-shadow: 6px 6px 10px black;
+    font-family : arial;
+    opacity : 0.9;
+    height : auto;
+}
+h1{
+    font-size : 40px;
+}
+#infoSess{
+    color : red;
+    font-size : 24px;
+}
+p{
+    font-size : 24px;
+}

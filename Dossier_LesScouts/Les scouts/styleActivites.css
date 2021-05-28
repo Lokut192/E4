@@ -1,0 +1,41 @@
+*{
+    padding : 0px;
+    margin : 0px;
+}
+body{
+    background : url("images/fond.jpg") fixed center no-repeat;
+    background-size: cover;
+}
+.principal{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 12.5%;
+    width : 75%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 6px 6px 10px black;
+    opacity : 0.9;
+    padding : 20px;
+    height : auto;
+}
+h2{
+    text-align : center;
+    font-size : 75px;
+   
+}
+#a{
+    text-align : center;
+    font-size : 22px;
+     color : rgb(12, 129, 224);
+}
+span{
+    font-size : 30px;    
+}
+#b{
+    text-align : center;
+    font-size : 22px;
+}
+
+p{
+    margin : 20px;
+}

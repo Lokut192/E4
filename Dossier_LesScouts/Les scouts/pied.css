@@ -1,0 +1,123 @@
+*{
+	margin:0;
+	padding:0;
+}
+h3{
+	font-size : 28px;
+	font-family : arial;
+}  
+body{
+	text-align: center;
+}      
+footer{
+	background-color: black;
+	color: white;
+	position: relative;
+	bottom : 0px;
+	bottom: 0;
+	max-width: 100%;
+	min-width: 100%;
+	padding-top: 10px;
+	margin-top: 40px;
+	height: auto;
+	opacity : 1;
+	z-index: 18;
+}
+div{
+	width : 100%;
+}
+a{
+	font-size : 24px;
+	color : black;
+	font-family : arial;
+}
+footer section
+{
+	width: 100%;
+	margin-top: 10px;
+	column-count: 3;
+}
+footer section div
+{
+	break-before: column;
+	text-align: center;
+	font-size: 28px;
+}
+footer a
+{
+	color: white;
+	text-decoration: underline;
+}
+form {
+	
+	margin: 0 auto;
+	width: 400px;
+	
+	padding: 7px;
+}
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+form li + li {
+	margin-top: 15px;
+	font-family : arial;
+}
+.saisies{
+	padding : 3px;
+}
+label {
+	
+	display: inline-block;
+	width: 90px;
+	text-align: center;
+	font-family : arial;
+}
+.saisieContact, .btnContact,textarea {
+	
+	font: 18px arial;
+	
+	width: 300px;
+	box-sizing: border-box; 
+	border: 1px solid #999;
+}
+.saisieContact:focus, .btnContact:focus,textarea:focus {
+	
+	border-color: #000;
+}
+textarea {
+	
+	vertical-align: top;
+	height: 60px;
+}
+#envoyer{
+    width : 100px;
+    font-size : 18px;
+    height : 25px;
+    background-color: white;
+    color : black;
+    border-radius : 5px;
+    box-shadow : none;
+    border: none;
+	transition-duration: 250ms;
+	margin-left : 125px;
+}
+#envoyer:hover{
+    cursor: pointer;
+}
+#envoyer:active{
+    border : none;
+    transform : scale(0.9);
+}
+
+@media screen and (max-width : 1005px){
+	footer section{
+		column-count: 1;
+	}
+	footer section div{
+		break-before: avoid;
+		margin : 10px 0px;
+		width: 100%;
+	}
+}
