@@ -1,0 +1,47 @@
+*{
+    padding : 0px;
+    margin : 0px;
+}
+body{
+    /*background : url("images/fond.jpg") fixed center no-repeat;*/
+    background-size: cover;
+    font-family: sans-serif;
+}
+.principal{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 12.5%;
+    width : 75%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 6px 6px 10px black;
+    opacity : 0.9;
+    height : auto;
+    padding: 10px;
+}
+.principal > h1{
+    text-align: center;
+}
+.infos{
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border : 1px solid black;
+    margin-top: 10px;
+}
+.infos > h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+.details{
+    margin : 10px;
+}
+.lbl{
+    font-weight: bold;
+    float : left;
+}
+.infosConnexion{
+    font-weight: bold;
+    color : red;
+}

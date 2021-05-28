@@ -10,6 +10,7 @@
         <?php include("menu.php"); ?>
         <div class="principal">
             <h1>Changer le mot de passe</h1>
+            <br><br>
             <form name="changerMDP" class="frmMDP" method="post">
                 <center>
                     <table>
@@ -73,37 +74,36 @@
                                     $req->bindValue(':login', $_SESSION['id'], PDO::PARAM_STR);
                                     try{
                                         $req->execute();
-                                        echo '<p class="confirmation">Votre mot de passe a bien été changé.</p>';
+                                        echo '<br><center><p class="confirmation">Votre mot de passe a bien été changé.</p></center>';
                                     }
                                     catch(PDOException $e){
-                                        echo '<p class="avertissement">Une erreur s\est produite.</p>';
+                                        echo '<br><center><p class="avertissement">Une erreur s\est produite.</p></center>';
                                     }
                                 }
                                 else{
                                     //Sinon on affiche un message d'erreur
-                                    echo '<p class="avertissement">ATTENTION ! L\'ancien mot de passe ne correspond pas !</p>';
+                                    echo '<br><center><p class="avertissement">ATTENTION ! L\'ancien mot de passe ne correspond pas !</p></center>';
                                 }
                             }
                             else{
                                 //Sinon on affiche un message d'erreur
-                                echo '<p class="avertissement">Nous n\'avons pas réussi à vous retrouver dans la base de données.</p>';
+                                echo '<br><center><p class="avertissement">Nous n\'avons pas réussi à vous retrouver dans la base de données.</p></center>';
                             }
                         }
                         else{
-                            echo '<p class="avertissement">ATTENTION ! Le nouveau mot de passe doit être au moins de 8 caractères !</p>';
+                            echo '<br><center><p class="avertissement">ATTENTION ! Le nouveau mot de passe doit être au moins de 8 caractères !</p></center>';
                         }
                     }
                     else{
-                        echo '<p class="avertissement">ATTENTION ! Le nouveau mot de passe et celui de confirmation ne sont pas les mêmes</p>';
+                        echo '<br><center><p class="avertissement">ATTENTION ! Le nouveau mot de passe et celui de confirmation ne sont pas les mêmes.</p></center>';
                     }
                 }
                 else{
                     //Sinon on affiche un message d'erreur clair
-                    echo '<p class="avertissement">ATTENTION ! Tous les champs doivent être remplis !</p>';
+                    echo '<br><center><p class="avertissement">ATTENTION ! Tous les champs doivent être remplis !</p></center>';
                 }
             }
             ?>
         </div>
-        <?php include("pied.php"); ?>
     </body>
 </html>

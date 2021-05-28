@@ -81,7 +81,7 @@
                 </fieldset>
 
                 <br><br>
-                <input type="submit" value="Valider" id="valider" name="valider"/>
+                <input type="submit" value="Valider" id="valider" name="validerInscriptionEnfant"/>
             </form>
             
             <script>
