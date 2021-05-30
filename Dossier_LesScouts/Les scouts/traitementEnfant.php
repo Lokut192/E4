@@ -93,7 +93,7 @@
         //Etape 1 : le role
         //On protège la séquence
         try{
-            $req = $bdd->prepare('INSERT INTO ROLES(permission,login,password,level)VALUES (:permission, :idPar1, :mdpPar1, :level');
+            $req = $bdd->prepare('INSERT INTO ROLES(permission,login,password,level)VALUES (:permission, :idPar1, :mdpPar1, :level)');
             $req->bindValue(':permission', 'parent', PDO::PARAM_STR);
             $req->bindValue(':idPar1', $idPar1, PDO::PARAM_STR);
             $req->bindValue(':mdpPar1', $mdpPar1, PDO::PARAM_STR);
@@ -130,7 +130,7 @@
             $req->bindValue(':villePar1', $villePar1, PDO::PARAM_STR);
             $req->bindValue(':telPar1', $telPar1, PDO::PARAM_STR);
             $req->bindValue(':mailPar1', $mailPar1, PDO::PARAM_STR);
-            $req->bindValue(':idRolePar1', $idRolePar1, PDO::PARAM_INT);
+            $req->bindValue(':idRolePar1', intval($idRolePar1), PDO::PARAM_INT);
             $req->execute();
         }
         catch(PDOException $e){
@@ -141,7 +141,7 @@
         //On protège la séquence
         try{
             $req = $bdd->prepare('SELECT * FROM PARENT WHERE idRole = :idRolePar1');
-            $req->bindValue(':idRolePar1', $idRolePar1, PDO::PARAM_INT);
+            $req->bindValue(':idRolePar1', intval($idRolePar1), PDO::PARAM_INT);
             $req->execute();
             $donnees = $req->fetch();
             $idParent1 = $donnees['id'];
@@ -155,10 +155,10 @@
             //Etape 1 : le role
             //On protège la séquence
             try{
-                $req = $bdd->prepare('INSERT INTO ROLES(permission,login,password,level)VALUES (:permission, :idPar2, :mdpPar2, :level');
+                $req = $bdd->prepare('INSERT INTO ROLES(permission,login,password,level)VALUES (:permission, :idPar2, :mdpPar2, :level)');
                 $req->bindValue(':permission', 'parent', PDO::PARAM_STR);
-                $req->bindValue(':idPar1', $idPar2, PDO::PARAM_STR);
-                $req->bindValue(':mdpPar1', $mdpPar2, PDO::PARAM_STR);
+                $req->bindValue(':idPar2', $idPar2, PDO::PARAM_STR);
+                $req->bindValue(':mdpPar2', $mdpPar2, PDO::PARAM_STR);
                 $req->bindValue(':level', 3, PDO::PARAM_INT);
                 $req->execute();
             }
@@ -191,7 +191,7 @@
                 $req->bindValue(':villePar2', $villePar2, PDO::PARAM_STR);
                 $req->bindValue(':telPar2', $telPar2, PDO::PARAM_STR);
                 $req->bindValue(':mailPar2', $mailPar2, PDO::PARAM_STR);
-                $req->bindValue(':idRolePar2', $idRolePar2, PDO::PARAM_INT);
+                $req->bindValue(':idRolePar2', intval($idRolePar2), PDO::PARAM_INT);
                 $req->execute();
             }
             catch(PDOException $e){
@@ -202,7 +202,7 @@
             //On protège la séquence
             try{
                 $req = $bdd->prepare('SELECT * FROM PARENT WHERE idRole = :idRolePar2');
-                $req->bindValue(':idRolePar2', $idRolePar2, PDO::PARAM_INT);
+                $req->bindValue(':idRolePar2', intval($idRolePar2), PDO::PARAM_INT);
                 $req->execute();
                 $donnees = $req->fetch();
                 $idParent2 = $donnees['id'];
@@ -243,11 +243,11 @@
             $req->bindValue(':telJeune', $telJeune, PDO::PARAM_STR);
             $req->bindValue(':mailJeune', $mailJeune, PDO::PARAM_STR);
             $req->bindValue(':cotisation', 0, PDO::PARAM_INT);
-            $req->bindValue(':idParent1', $idParent1, PDO::PARAM_STR);
-            $req->bindValue(':idParent2', $idParent2, PDO::PARAM_STR);
-            $req->bindValue(':idBranche', $idBranche, PDO::PARAM_STR);
+            //On doit faire un casting ici car les valeurs arrivent en string et la table a besoin de int
+            $req->bindValue(':idParent1', intval($idParent1), PDO::PARAM_INT);
+            $req->bindValue(':idParent2', intval($idParent2), PDO::PARAM_STR);
+            $req->bindValue(':idBranche', intval($idBranche), PDO::PARAM_INT);
             $req->execute();
-            echo $naissJeune;
         }
         catch(PDOException $e){
             echo 'Une erreur est survenue lors de l\'entrée de l\'enfant dans la base : '.$e;
@@ -307,16 +307,21 @@
         $mailJeune = '-';
     }
 
+    //On reformate correctement les dates de naissances de tout le monde au format jj/mm/aaaa
+    $dateJeune = DateTime::createFromFormat('Y-m-d', $naissJeune)->format('d/m/Y');
+    $datePar1 = DateTime::createFromFormat('Y-m-d', $naissPar1)->format('d/m/Y');
+    if($parent2){
+        $datePar2 = DateTime::createFromFormat('Y-m-d', $naissPar2)->format('d/m/Y');
+    }
 ?>
 
 <div class="principal">
-    <?= date('dd/mm/YYYY', strtotime($naissJeune)) ?>
     <h1>Création d'un enfant</h1>
     <div class="resumeEnfant infos">
         <h1><?= strtoupper($nomJeune).' '.$prenomJeune ?></h1>
         <div class="details">
             <label class="lbl">Sexe :</label><p class="detail"><?= $sexeJeune ?></p>
-            <label class="lbl">Date de naissance :</label><p class="detail"><?= date_format(strtotime($naissJeune), 'dd/mm/YYYY') ?></p>
+            <label class="lbl">Date de naissance :</label><p class="detail"><?= $dateJeune ?></p>
             <label class="lbl">Adresse :</label><p class="detail"><?= $rueJeune ?></p>
             <label class="lbl">Code postal :</label><p class="detail"><?= $cpJeune ?></p>
             <label class="lbl">Ville :</label><p class="detail"><?= $villeJeune ?></p>
@@ -329,7 +334,7 @@
         <h1><?= strtoupper($nomPar1).' '.$prenomPar1 ?></h1>
         <div class="details">
             <label class="lbl">Sexe :</label><p class="detail"><?= $sexePar1 ?></p>
-            <label class="lbl">Date de naissance :</label><p class="detail"><?= date_format(strtotime($naissPar1), 'dd/mm/YYYY') ?></p>
+            <label class="lbl">Date de naissance :</label><p class="detail"><?= $datePar1 ?></p>
             <label class="lbl">Adresse :</label><p class="detail"><?= $ruePar1 ?></p>
             <label class="lbl">Code postal :</label><p class="detail"><?= $cpPar1 ?></p>
             <label class="lbl">Ville :</label><p class="detail"><?= $villePar1 ?></p>
@@ -349,7 +354,7 @@
             <h1><?= strtoupper($nomPar2).' '.$prenomPar2 ?></h1>
             <div class="details">
                 <label class="lbl">Sexe :</label><p class="detail"><?= $sexePar2 ?></p>
-                <label class="lbl">Date de naissance :</label><p class="detail"><?= date_format(strtotime($naissPar2), 'dd/mm/YYYY') ?></p>
+                <label class="lbl">Date de naissance :</label><p class="detail"><?= $datePar2 ?></p>
                 <label class="lbl">Adresse :</label><p class="detail"><?= $ruePar2 ?></p>
                 <label class="lbl">Code postal :</label><p class="detail"><?= $cpPar2 ?></p>
                 <label class="lbl">Ville :</label><p class="detail"><?= $villePar2 ?></p>

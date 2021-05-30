@@ -3,7 +3,7 @@
     margin : 0px;
 }
 body{
-    /*background : url("images/fond.jpg") fixed center no-repeat;*/
+    background : url("images/fond.jpg") fixed center no-repeat;
     background-size: cover;
     font-family: sans-serif;
 }
