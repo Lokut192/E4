@@ -52,16 +52,33 @@ $titre=$mois_fr[$mois]." : ".$annee;
 				</select>
 				<select name="annee" id="annee" onChange="change()" class="liste">
 				<?php
-					for($i=2020;$i<2025;$i++)
+					for($j=2020;$j<2025;$j++)
 					{
-						echo '<option value="'.$i.'"';
-						if($i==$annee)
+						echo '<option value="'.$j.'"';
+						if($j==$annee)
 							echo ' selected ';
-							echo '>'.$i.'</option>';
+							echo '>'.$j.'</option>';
 					}
 				?>
 			</select>
 		</form>
+        <?php
+        /**
+         * On va récupérer toutes les activités du mois sélectionné
+         */
+        $lstActivites = null;
+        //On regarde quelles sont les fourchettes de dates en fonction du mois sélectionné
+        //Les mois qui ont 31 jours
+        $dateFin = null;
+        if($mois = 1 || $mois = 3 || $mois = 5 || $mois = 7 || $mois = 8 || $mois = 10 || $mois = 12){
+            if(strlen((string)$mois) == 1) $mois = '0'.$mois;
+            $dateFin = $annee . '-' . $mois . '-31';
+        }
+        elseif ($mois = 2){
+            //On regarde si l'année est bissextile ou non
+
+        }
+        ?>
 		<table class="tableau"><caption><?php echo $titre ;?></caption>
 		<tr><th>Lun/</th><th>Mar/</th><th>Mer/</th><th>Jeu/</th><th>Ven/</th><th>Sam/</th><th>Dim</th></tr>
 		<tr>
@@ -112,6 +129,7 @@ $titre=$mois_fr[$mois]." : ".$annee;
 					}
 				?></tr>
 			</table>
+        <?php echo $f; ?>
 	</center>
 </body>
 
